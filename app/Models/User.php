@@ -3,7 +3,6 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\Story;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
@@ -35,5 +34,15 @@ class User extends Authenticatable
     public function stories(): HasMany
     {
         return $this->hasMany(Story::class);
+    }
+
+    public function storyLikes(): HasMany
+    {
+        return $this->hasMany(StoryLike::class);
+    }
+
+    public function storyComments(): HasMany
+    {
+        return $this->hasMany(StoryComment::class);
     }
 }
