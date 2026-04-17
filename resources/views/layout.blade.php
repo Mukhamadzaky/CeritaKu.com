@@ -8,7 +8,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <nav class="bg-slate-950/95 backdrop-blur-xl sticky top-0 z-50 shadow-2xl border-b border-slate-800">
+    <nav class="fixed inset-x-0 top-0 z-50 bg-slate-950/95 backdrop-blur-xl shadow-2xl border-b border-slate-800">
         <div class="container mx-auto px-6 py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between max-w-6xl">
             <div class="flex items-center gap-4">
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-3 text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500 hover:scale-105 transition-transform">
@@ -20,6 +20,8 @@
             <div class="flex flex-wrap items-center gap-3 justify-end">
                 <a href="{{ route('home') }}" class="text-slate-200 hover:text-white transition-colors font-semibold">Beranda</a>
                 <a href="{{ route('stories.all') }}" class="text-slate-200 hover:text-white transition-colors font-semibold">Semua Cerita</a>
+                <a href="{{ route('faq') }}" class="text-slate-200 hover:text-white transition-colors font-semibold">FAQ</a>
+                <a href="{{ route('about') }}" class="text-slate-200 hover:text-white transition-colors font-semibold">Tentang</a>
                 
                 @auth
                     <a href="{{ route('stories.create') }}" class="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-indigo-200/40 hover:bg-indigo-700 transition-all">
@@ -65,7 +67,7 @@
         </div>
     </nav>
 
-    <main class="container mx-auto px-6 py-10 max-w-6xl">
+    <main class="container mx-auto px-6 py-10 pt-28 max-w-6xl">
         @yield('content')
     </main>
 
@@ -85,6 +87,8 @@
                 <ul class="space-y-3 text-slate-400 text-sm">
                     <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Beranda</a></li>
                     <li><a href="{{ route('stories.create') }}" class="hover:text-white transition-colors">Tulis Cerita</a></li>
+                    <li><a href="{{ route('faq') }}" class="hover:text-white transition-colors">FAQ</a></li>
+                    <li><a href="{{ route('about') }}" class="hover:text-white transition-colors">Tentang</a></li>
                     @auth
                         <li><a href="{{ route('stories.mine') }}" class="hover:text-white transition-colors">Karyaku</a></li>
                     @endauth

@@ -7,6 +7,12 @@ use App\Http\Controllers\ProfileController; // Pastikan ini ditambahkan
 // Rute Publik (Bisa diakses tanpa login)
 Route::get('/', [StoryController::class, 'index'])->name('home');
 Route::get('/cerita', [StoryController::class, 'allStories'])->name('stories.all');
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+Route::get('/tentang', function () {
+    return view('about');
+})->name('about');
 Route::get('/cerita/{id}', [StoryController::class, 'show'])->name('stories.show');
 
 // Rute Privat (Harus login)
